@@ -4,18 +4,16 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Default false rakha hai
 
   useEffect(() => {
-    try {
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      try {
         setUser(JSON.parse(storedUser));
+      } catch (e) {
+        localStorage.removeItem('user');
       }
-    } catch (err) {
-      console.error("Auth initialization error:", err);
-    } finally {
-      setLoading(false); // Ye har haal mein false hona chahiye
     }
   }, []);
 
@@ -27,7 +25,6 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem('user');
-    localStorage.removeItem('token');
   };
 
   return (
