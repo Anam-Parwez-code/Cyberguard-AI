@@ -100,7 +100,7 @@ const Dashboard = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #30363d', paddingBottom: '15px', alignItems: 'center' }}>
         <h2 style={{ color: '#58a6ff', margin: 0 }}>🛡️ CyberGuard AI | Phase 4</h2>
         <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-          <span style={{ fontSize: '12px', background: '#161b22', padding: '5px 12px', borderRadius: '15px', border: '1px solid #30363d' }}>📜 {auditCount} Logs Secured</span>
+          <span style={{ fontSize: '12px', background: '#161b22', padding: '5px 12px', borderRadius: '15px', border: '1px solid #30363d' }}>📜 {auditCount} Log Secured</span>
           <button onClick={downloadAuditLog} style={{ background: '#238636', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>📥 Export Audit</button>
         </div>
       </div>
