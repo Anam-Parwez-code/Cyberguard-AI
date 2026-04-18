@@ -179,3 +179,10 @@
 {"level":"info","message":"🚀 CyberGuard AI Backend running on port 5000","service":"cyberguard-backend","timestamp":"2026-04-17 10:37:15"}
 {"level":"info","message":"📊 Environment: development","service":"cyberguard-backend","timestamp":"2026-04-17 10:37:15"}
 {"level":"info","message":"🔗 Health check: http://localhost:5000/health","service":"cyberguard-backend","timestamp":"2026-04-17 10:37:15"}
+{"level":"info","message":"✅ MongoDB connected successfully","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:28"}
+{"level":"info","message":"✅ Redis connected successfully","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:29"}
+{"level":"info","message":"✅ PostgreSQL connected successfully","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:30"}
+{"level":"info","message":"🎉 All databases connected successfully","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:30"}
+{"level":"info","message":"🚀 CyberGuard AI Backend running on port 5000","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:30"}
+{"level":"info","message":"📊 Environment: development","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:30"}
+{"level":"info","message":"🔗 Health check: http://localhost:5000/health","service":"cyberguard-backend","timestamp":"2026-04-17 16:36:30"}
