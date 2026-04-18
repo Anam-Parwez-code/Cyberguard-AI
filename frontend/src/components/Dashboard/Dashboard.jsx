@@ -35,7 +35,7 @@ const Dashboard = () => {
     const adminKey = prompt("Enter Admin Secret Key:");
     if (!adminKey) return;
     try {
-      const res = await axios.get(`http://localhost:8000/export-audit?api_key=${adminKey}`);
+      const res = await axios.get(`/api/export-audit?api_key=${adminKey}`);
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(res.data, null, 2));
       const downloadAnchorNode = document.createElement('a');
       downloadAnchorNode.setAttribute("href", dataStr);
@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const fetchStatus = async () => {
     try {
-      const resCount = await axios.get('http://localhost:8000/audit-status');
+      const resCount = await axios.get('/api/audit-status');
       setAuditCount(resCount.data.total_logs);
       
       // Phase 4: Advanced Traffic Simulation (SQL & DDoS)
@@ -58,7 +58,7 @@ const Dashboard = () => {
       if (rand > 0.8) { payload = "UNION SELECT * FROM users--"; } // SQLi
       else if (rand > 0.6) { packet = 950; requests = 600; } // DDoS
 
-      const resAnalyze = await axios.post('http://localhost:8000/analyze-traffic', {
+      const resAnalyze = await axios.post('/api/analyze-traffic', {
         ip_source: rand > 0.6 ? "CRITICAL_IP_TARGET" : `192.168.1.${Math.floor(Math.random()*255)}`,
         packet_size: packet,
         request_count: requests,
@@ -86,7 +86,7 @@ const Dashboard = () => {
     setChatHistory(prev => [...prev, { role: 'user', text: msg }]);
     setChatInput("");
     try {
-      const res = await axios.post('http://localhost:8000/chat', { message: msg });
+      const res = await axios.post('/api/chat', { message: msg });
       setChatHistory(prev => [...prev, { role: 'ai', text: res.data.reply_en, ar: res.data.reply_ar }]);
     } catch (err) { console.error(err); }
   };
